@@ -8,7 +8,7 @@ from PIL import Image
 image = Image.open('exl.png')
 
 
-llm = OpenAI(api_token="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")
+llm = OpenAI(api_token="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")
 #llm = OpenAI(api_token="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")
 pandas_ai = PandasAI(llm, conversational=False)
 
