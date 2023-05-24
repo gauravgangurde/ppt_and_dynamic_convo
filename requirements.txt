@@ -25,4 +25,4 @@ urllib3==1.26.7
 Werkzeug==2.0.2
 streamlit==1.22.0
 pillow==9.5.0
-pandasai==2.0.1
+pandasai
