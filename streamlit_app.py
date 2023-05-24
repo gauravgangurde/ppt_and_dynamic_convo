@@ -8,8 +8,8 @@ from PIL import Image
 image = Image.open('exl.png')
 
 
-#llm = OpenAI(api_token="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")
-llm = OpenAI(api_token="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")
+llm = OpenAI(api_token="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")
+#llm = OpenAI(api_token="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")
 pandas_ai = PandasAI(llm, conversational=False)
 
 df = pd.read_csv('employees.csv')
