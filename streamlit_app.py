@@ -29,8 +29,8 @@ with st.form("my_form"):
    query = st.text_input(label ="Enter a question" , placeholder = 'Enter your query')
    # Every form must have a submit button.
    submitted = st.form_submit_button("Submit")
-    if submitted:
-        response = pandas_ai(df, prompt=query)
-        st.text(response)
+   if submitted:
+       response = pandas_ai(df, prompt=query)
+       st.text(response)
 
 
