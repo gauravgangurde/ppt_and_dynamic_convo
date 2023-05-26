@@ -28,7 +28,7 @@ def contains_substring(string, substrings):
     
     
 with st.sidebar:
-    st.image(image, use_column_width= 'auto')
+    st.image(image, use_column_width= 'always')
     st.header('Conversational BI')
     st.write('Ask any question on your BI report')
     st.write(' ')
