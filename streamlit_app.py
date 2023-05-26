@@ -7,7 +7,7 @@ from PIL import Image
 import matplotlib.pyplot as plt
 
 #st.set_option('deprecation.showPyplotGlobalUse', False)
-image = Image.open('exl.png')
+image = Image.open('exl.png', use_column_width= 'auto')
 
 
 llm = OpenAI(api_token=st.secrets["chat_gpt_key"])
@@ -31,9 +31,9 @@ with st.sidebar:
     st.image(image)
     st.header('Conversational BI')
     st.write('Ask any question on your BI report')
-    st.divider()
+    st.write(' ')
     role = st.selectbox('Please select your role',('HR Manager', 'Sales Manager', 'Claims Manager'))
-    st.divider()
+
 
 #based on role selected show BI report  
 if   role == 'HR Manager':
