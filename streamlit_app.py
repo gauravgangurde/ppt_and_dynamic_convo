@@ -30,7 +30,7 @@ def contains_substring(string, substrings):
 with st.sidebar:
     st.image(image)
     st.header('Conversational BI')
-    st.write('Ask any question on your BI report\n')
+    st.write('Ask any question on your BI report\n\n\n')
     role = st.selectbox('Please select your role',('HR Manager', 'Sales Manager', 'Claims Manager'))
 
 #based on role selected show BI report  
