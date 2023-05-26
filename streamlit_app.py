@@ -32,6 +32,7 @@ with st.sidebar:
     st.header('Conversational BI')
     st.write('Ask any question on your BI report')
     st.write(' ')
+    st.write(' ')
     role = st.selectbox('Please select your role',('HR Manager', 'Sales Manager', 'Claims Manager'))
 
 
