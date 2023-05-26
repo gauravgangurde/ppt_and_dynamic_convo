@@ -44,7 +44,7 @@ matplotlib==3.7.1
 matplotlib-inline==0.1.6
 mdurl==0.1.2
 multidict==6.0.4
-numpy==1.21.3
+numpy
 openai==0.27.7
 openpyxl==3.0.9
 packaging==23.1
