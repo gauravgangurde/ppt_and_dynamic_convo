@@ -12,7 +12,7 @@ regex
 requests
 rich
 rsa
-setuptools
+setuptools==67.7.2
 six
 smmap
 stack-data
@@ -36,3 +36,4 @@ wcwidth
 Werkzeug
 yarl
 zipp
+wheel==0.40.0
