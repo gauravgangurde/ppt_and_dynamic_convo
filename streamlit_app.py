@@ -30,7 +30,7 @@ with st.form("my_form"):
    # Every form must have a submit button.
    submitted = st.form_submit_button("Submit")
    if submitted:
-       response = pandas_ai_run(df, query)
+       response = pandas_ai.run(df, query)
        st.text(response)
 
 
