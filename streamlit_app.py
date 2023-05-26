@@ -57,7 +57,6 @@ with st.form("my_form"):
         st.text(response)
        else:
         response = pandas_ai(df, prompt=query)
-        st.pyplot(fig)
         st.text(response)
 
 
