@@ -7,7 +7,7 @@ from PIL import Image
 import matplotlib.pyplot as plt
 
 #st.set_option('deprecation.showPyplotGlobalUse', False)
-image = Image.open('exl.png', use_column_width= 'auto')
+image = Image.open('exl.png')
 
 
 llm = OpenAI(api_token=st.secrets["chat_gpt_key"])
@@ -28,7 +28,7 @@ def contains_substring(string, substrings):
     
     
 with st.sidebar:
-    st.image(image)
+    st.image(image, use_column_width= 'auto')
     st.header('Conversational BI')
     st.write('Ask any question on your BI report')
     st.write(' ')
