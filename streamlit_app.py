@@ -18,7 +18,7 @@ df1 = pd.read_csv('employees.csv')
 df2 = pd.read_csv('sales_data.csv')
 df3 = pd.read_csv('claims_data.csv')
 
-ls = ['chart','plot','graph']
+ls = ['chart','plot','graph','trend']
 #to check if prompt have chart, graph words
 def contains_substring(string, substrings):
     for substring in substrings:
@@ -28,7 +28,7 @@ def contains_substring(string, substrings):
     
     
 with st.sidebar:
-    st.image(image, width = 100)
+    st.image(image, width = 150)
     st.header('Conversational BI')
     st.write('Ask any question on your BI report')
     st.write(' ')
