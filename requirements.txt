@@ -55,7 +55,7 @@ openpyxl
 packaging
 pandas
 pandas-stubs
-pandasai==0.2.14
+pandasai==0.3.0
 parso
 pickleshare
 Pillow
