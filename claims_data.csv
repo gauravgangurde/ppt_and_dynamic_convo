@@ -1,4 +1,4 @@
-﻿Accident Date,Claim Date,Claiment Gender,Claimant Age,Claim Number,Policy Number,Policy Type,Fraud Found,Deductible,Driver Rating,Police Report Filed,Witness Present,Agent Type,Base Policy Type
+﻿Accident Date,Claim Date,Claimant Gender,Claimant Age,Claim Number,Policy Number,Policy Type,Fraud Found,Deductible,Driver Rating,Police Report Filed,Witness Present,Agent Type,Base Policy Type
 21-Jul-05,08-Aug-05,Female,68,1,1030,Sport - Liability,0,300,1,No,No,External,Liability
 27-May-01,31-Mar-02,Male,53,2,4299,Sport - Collision,0,400,4,Yes,No,External,Collision
 04-Jul-02,05-Jul-02,Male,43,3,3806,Sport - Collision,0,400,3,No,No,External,Collision
