@@ -12,7 +12,7 @@ image = Image.open('exl.png')
 
 llm = OpenAI(api_token=st.secrets["chat_gpt_key"])
 
-pandas_ai = PandasAI(llm, conversational=False)
+pandas_ai = PandasAI(llm, conversational=False, enforce_privacy = True)
 
 df1 = pd.read_csv('employees.csv')
 df2 = pd.read_csv('sales_data.csv')
