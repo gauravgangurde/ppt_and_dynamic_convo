@@ -14,9 +14,7 @@ llm = OpenAI(api_token=st.secrets["chat_gpt_key"])
 
 pandas_ai = PandasAI(llm, conversational=False, enforce_privacy = True)
 
-df1 = pd.read_csv('employees.csv')
-df2 = pd.read_csv('sales_data.csv')
-df3 = pd.read_csv('claims_data.csv')
+df = pd.read_csv('data.csv')
 
 ls = ['chart','plot','graph','trend']
 #to check if prompt have chart, graph words
@@ -31,20 +29,10 @@ with st.sidebar:
     st.image(image, width = 150)
     st.header('Conversational BI')
     st.write('Ask any question on your BI report')
-    st.write(' ')
-    st.write(' ')
-    role = st.selectbox('Please select your role',('HR Manager', 'Sales Manager', 'Claims Manager'))
 
 
-#based on role selected show BI report  
-if   role == 'HR Manager':
-    df = df1
-elif role == 'Sales Manager':
-    df = df2
-elif role == 'Claims Manager':
-    df = df3
 
-st.header("BI Report (Structure): " + role.replace('Manager',''))
+st.header("BI Report (Structure): " )
 st.dataframe(df.head())
 
 with st.form("my_form"):
