@@ -79,10 +79,10 @@ if os.path.isfile('prev_response.csv'):
         if submitted:
             if contains_substring(query.lower(),ls): 
                 fig, x = plt.subplots()
-                response = pandas_ai(df, prompt=query)
+                response = pandas_ai(df2, prompt=query)
                 st.pyplot(fig)
             else:
-                response = pandas_ai(df, prompt=query)
+                response = pandas_ai(df2, prompt=query)
                 if isinstance(response, str):
                     st.text(response)
                 else:
