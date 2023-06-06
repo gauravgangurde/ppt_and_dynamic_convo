@@ -53,8 +53,8 @@ with st.form("my_form"):
             response = pandas_ai(df, prompt=query)
             if isinstance(response, pd.DataFrame):
                 st.dataframe(response)
-                with open('prev_response.csv', 'w').write(response.to_csv())
-                response.to_csv('/prev_response.csv')
+               # with open('prev_response.csv', 'w').write(response.to_csv())
+                #response.to_csv('/prev_response.csv')
             else:
                 st.text(response.to_string(index=False))
 
