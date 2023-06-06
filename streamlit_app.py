@@ -50,7 +50,7 @@ with st.form("my_form"):
             response = pandas_ai(df, prompt=query)
             if isinstance(response, pd.DataFrame):
                 st.dataframe(response)
-                open('/prev_response.csv', 'wb').write(response.to_csv())
+                response.to_csv('prev_response.csv')
             else:
                 st.text(response.to_string(index=False))
 
