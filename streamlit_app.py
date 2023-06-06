@@ -16,6 +16,9 @@ llm = OpenAI(api_token=st.secrets["chat_gpt_key"])
 pandas_ai = PandasAI(llm, conversational=False)#, enforce_privacy = True)
 
 df = pd.read_csv('data.csv')
+if os.path.isfile('/app/project_conversation_bi/prev_response.csv'):
+    df2 = pd.read_csv('/app/project_conversation_bi/prev_response.csv')
+    st.dataframe(df2)
 
 ls = ['chart','plot','graph','trend']
 #to check if prompt have chart, graph words
