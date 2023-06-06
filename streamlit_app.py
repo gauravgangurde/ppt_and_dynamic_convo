@@ -32,7 +32,13 @@ with st.sidebar:
     st.write('Ask any question on your BI report')
     st.write('Gaurav')
     st.write(os.listdir('/'))
-
+st.write('Gaurav')    
+st.write(os.listdir('/home/'))
+st.write('Gaurav')
+st.write(os.listdir('/usr/'))
+st.write('Gaurav')
+st.write(os.listdir('/tmp/'))
+    
 
 
 st.header("BI Report (Structure): " )
