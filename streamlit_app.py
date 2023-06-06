@@ -30,15 +30,14 @@ with st.sidebar:
     st.image(image, width = 150)
     st.header('Conversational BI')
     st.write('Ask any question on your BI report')
-    st.write('Gaurav')
-    st.write(os.listdir('/'))
-st.write('Gaurav')    
-st.write(os.listdir('/home/appuser'))
-st.write('Gaurav')
-st.write(os.listdir('/usr/src'))
-st.write(os.listdir('/usr/local'))
-st.write('app')    
-st.write(os.listdir('/app/project_conversation_bi/'))
+
+#st.write('Gaurav')    
+#st.write(os.listdir('/home/appuser'))
+#st.write('Gaurav')
+#st.write(os.listdir('/usr/src'))
+#st.write(os.listdir('/usr/local'))
+#st.write('app')    
+#st.write(os.listdir('/app/project_conversation_bi/'))
 
 
 st.header("BI Report (Structure): " )
@@ -59,6 +58,7 @@ with st.form("my_form"):
             response = pandas_ai(df, prompt=query)
             if isinstance(response, pd.DataFrame):
                 st.dataframe(response)
+                open('/app/project_conversation_bi/prev_response.csv', 'w').write(response.to_csv())
             else:
                 st.text(response.to_string(index=False))
 
