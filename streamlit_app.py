@@ -47,8 +47,13 @@ with st.form("my_form"):
         st.pyplot(fig)
         st.text(response)
        else:
-        response = pandas_ai(df, prompt=query)
-        st.text(response.to_string(index=False))
+		response = pandas_ai(df, prompt=query)
+		if isinstance(response, pd.DataFrame):
+			st.dataframe(response)
+			if st.button('save dataframe'):
+				open('prev_response.csv', 'w').write(response.to_csv())
+		else:
+			st.text(response.to_string(index=False))
 
 
 
