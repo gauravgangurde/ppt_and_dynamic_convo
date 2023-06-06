@@ -38,7 +38,7 @@ st.write('Gaurav')
 st.write(os.listdir('/usr/src'))
 st.write(os.listdir('/usr/local'))
 st.write('app')    
-st.write(os.listdir('/app/'))
+st.write(os.listdir('/app/project_conversation_bi/'))
 
 
 st.header("BI Report (Structure): " )
