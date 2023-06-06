@@ -71,19 +71,19 @@ if os.path.isfile('prev_response.csv'):
     st.header("Data report" )
     st.dataframe(df2.head)
     
-    with st.form("my_form_2"):
-    
-        query = st.text_input(label ="Enter a question" , placeholder = 'Enter your query')
-        # Every form must have a submit button.
-        submitted = st.form_submit_button("Submit")
-        if submitted:
-            if contains_substring(query.lower(),ls): 
-                fig, x = plt.subplots()
-                response = pandas_ai(df, prompt=query)
-                st.pyplot(fig)
-            else:
-                response = pandas_ai(df, prompt=query)
-                if isinstance(response, str):
-                    st.text(response)
-                else:
-                    st.text(response.to_string(index=False))
+#    with st.form("my_form_2"):
+#    
+#        query = st.text_input(label ="Enter a question" , placeholder = 'Enter your query')
+#        # Every form must have a submit button.
+#        submitted = st.form_submit_button("Submit")
+#        if submitted:
+#            if contains_substring(query.lower(),ls): 
+#                fig, x = plt.subplots()
+#                response = pandas_ai(df, prompt=query)
+#                st.pyplot(fig)
+#            else:
+#                response = pandas_ai(df, prompt=query)
+#                if isinstance(response, str):
+#                    st.text(response)
+#                else:
+#                    st.text(response.to_string(index=False))
