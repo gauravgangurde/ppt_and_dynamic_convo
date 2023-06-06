@@ -42,7 +42,7 @@ with st.sidebar:
 #st.write(os.listdir('/app/project_conversation_bi/'))
 
 
-st.header("Raw data" )
+st.subheader("Raw data" )
 st.dataframe(df.head())
 
 with st.form("my_form"):
@@ -68,7 +68,7 @@ with st.form("my_form"):
 
 if os.path.isfile('prev_response.csv'):
     df2 = pd.read_csv('prev_response.csv')
-    st.header("Data report" )
+    st.subheader("Data report" )
     st.dataframe(df2.head())
     
     with st.form("my_form_2"):
