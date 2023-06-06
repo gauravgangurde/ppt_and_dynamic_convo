@@ -33,12 +33,12 @@ with st.sidebar:
     st.write('Gaurav')
     st.write(os.listdir('/'))
 st.write('Gaurav')    
-st.write(os.listdir('/home/'))
+st.write(os.listdir('/home/appuser'))
 st.write('Gaurav')
-st.write(os.listdir('/usr/'))
-st.write('Gaurav')
-st.write(os.listdir('/tmp/'))
-    
+st.write(os.listdir('/usr/src'))
+st.write(os.listdir('/usr/local'))
+st.write('app')    
+st.write(os.listdir('/app/'))
 
 
 st.header("BI Report (Structure): " )
