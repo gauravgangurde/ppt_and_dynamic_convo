@@ -30,6 +30,7 @@ with st.sidebar:
     st.image(image, width = 150)
     st.header('Conversational BI')
     st.write('Ask any question on your BI report')
+    st.write('Gaurav')
     st.write(os.listdir('/'))
 
 
