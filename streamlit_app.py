@@ -69,7 +69,7 @@ with st.form("my_form"):
 if os.path.isfile('prev_response.csv'):
     df2 = pd.read_csv('prev_response.csv')
     st.header("Data report" )
-    st.dataframe(df2.head)
+    st.dataframe(df2.head())
     
 #    with st.form("my_form_2"):
 #    
