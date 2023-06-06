@@ -48,7 +48,7 @@ with st.form("my_form"):
         st.text(response)
        else:
         response = pandas_ai(df, prompt=query)
-        st.text(response)
+        st.text(response.to_string(index=False))
 
 
 
