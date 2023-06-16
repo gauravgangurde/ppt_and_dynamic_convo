@@ -29,9 +29,9 @@ st.dataframe(df.head())
 with st.form("my_form"):
 
     graph1 = st.text_input(label ="Graph1")
-    graph2 = st.text_input(label ="Graph2")
+    """graph2 = st.text_input(label ="Graph2")
     graph3 = st.text_input(label ="Graph3")
-    graph4 = st.text_input(label ="Graph4")
+    graph4 = st.text_input(label ="Graph4")"""
     
     # Every form must have a submit button.
     submitted = st.form_submit_button("Submit")
@@ -42,7 +42,7 @@ with st.form("my_form"):
         st.pyplot(fig1)
        # fig1.figsave('graph1.jpg')
 
-        fig2, x2= plt.subplots()
+        """fig2, x2= plt.subplots()
         response2 = pandas_ai(df, prompt=f"Plot {graph2}")
         st.pyplot(fig2)
        # fig2.figsave('graph2.jpg')
@@ -55,7 +55,7 @@ with st.form("my_form"):
         fig4, x4= plt.subplots()
         response4 = pandas_ai(df, prompt=f"Plot {graph4}")
         st.pyplot(fig4)
-      #  fig4.figsave('graph4.jpg')
+      #  fig4.figsave('graph4.jpg')"""
     
     
 """    
