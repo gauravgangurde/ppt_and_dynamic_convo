@@ -56,41 +56,41 @@ with st.form("my_form"):
         response4 = pandas_ai(df, prompt=f"Plot {graph4}")
         st.pyplot(fig4)
         fig4.figsave('graph4.jpg')
-
-
-
-        # Create a new PowerPoint presentation
-        presentation = Presentation()
+    
+    
+    
+    # Create a new PowerPoint presentation
+    presentation = Presentation()
+    
+    # Define the image file paths
+    image_paths = ['graph1.jpg', 'graph2.jpg', 'graph3.jpg', 'graph4.jpg']
+    
+    # Create a slide with a 2x2 image grid
+    slide_layout = presentation.slide_layouts[6]  # Use slide layout with 2 content placeholders
+    slide = presentation.slides.add_slide(slide_layout)
+    shapes = slide.shapes
+    left = Inches(0.5)
+    top = Inches(0.5)
+    width = height = Inches(3)
+    
+    # Iterate over the image paths and add images to the slide
+    for i, image_path in enumerate(image_paths):
+        if i > 3:
+            break
+        # Add image to the slide
+        picture = shapes.add_picture(image_path, left, top, width, height)
+        # Update positioning for the next image
+        if i == 1:
+            left = Inches(4.5)
+        else:
+            top = Inches(4.5)
         
-        # Define the image file paths
-        image_paths = ['graph1.jpg', 'graph2.jpg', 'graph3.jpg', 'graph4.jpg']
-        
-        # Create a slide with a 2x2 image grid
-        slide_layout = presentation.slide_layouts[6]  # Use slide layout with 2 content placeholders
-        slide = presentation.slides.add_slide(slide_layout)
-        shapes = slide.shapes
-        left = Inches(0.5)
-        top = Inches(0.5)
-        width = height = Inches(3)
-        
-        # Iterate over the image paths and add images to the slide
-        for i, image_path in enumerate(image_paths):
-            if i > 3:
-                break
-            # Add image to the slide
-            picture = shapes.add_picture(image_path, left, top, width, height)
-            # Update positioning for the next image
-            if i == 1:
-                left = Inches(4.5)
-            else:
-                top = Inches(4.5)
-                
         # Save the PowerPoint presentation
         presentation.save('image_grid.pptx')
-
-        with open("image_grid.pptx", "rb") as file:
-            st.download_button(
-                label="Download data",
-                data=file,
-                file_name='image_grid.pptx'
+    
+    with open("image_grid.pptx", "rb") as file:
+        st.download_button(
+            label="Download data",
+            data=file,
+            file_name='image_grid.pptx'
             )
