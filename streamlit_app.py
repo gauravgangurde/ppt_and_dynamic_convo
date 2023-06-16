@@ -5,8 +5,8 @@ from pandasai import PandasAI
 from pandasai.llm.openai import OpenAI
 from PIL import Image
 import matplotlib.pyplot as plt
-#from pptx import Presentation
-#from pptx.util import Inches
+from pptx import Presentation
+from pptx.util import Inches
 
 #st.set_option('deprecation.showPyplotGlobalUse', False)
 image = Image.open('exl.png')
