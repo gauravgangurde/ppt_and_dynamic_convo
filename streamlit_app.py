@@ -33,25 +33,16 @@ graph4 = st.text_input(label ="Graph4")
 
 if st.button("Submit"):
     
-    fig1, x1= plt.subplots()
+    fig, x= plt.subplots(2,2)
     response1 = pandas_ai(df, prompt=f"Plot {graph1}")
-    st.pyplot(fig1)
-    fig1.savefig('graph1.jpg')
-
-    fig2, x2= plt.subplots()
     response2 = pandas_ai(df, prompt=f"Plot {graph2}")
-    st.pyplot(fig2)
-    fig2.savefig('graph2.jpg')
-
-    fig3, x3= plt.subplots()
     response3 = pandas_ai(df, prompt=f"Plot {graph3}")
-    st.pyplot(fig3)
-    fig3.savefig('graph3.jpg')
-
-    fig4, x4= plt.subplots()
     response4 = pandas_ai(df, prompt=f"Plot {graph4}")
-    st.pyplot(fig4)
-    fig4.savefig('graph4.jpg')
+    st.pyplot(fig[0,0])
+    st.pyplot(fig[1,0])
+    st.pyplot(fig[0,1])
+    st.pyplot(fig[1,1])
+    fig.savefig('graphs.png')
 
 
     
@@ -64,25 +55,12 @@ if st.button("Submit"):
     # Create a slide with a 2x2 image grid
     slide_layout = presentation.slide_layouts[6]  # Use slide layout with 2 content placeholders
     slide = presentation.slides.add_slide(slide_layout)
-    shapes = slide.shapes
-    left = Inches(0.5)
-    top = Inches(0.5)
-    width = height = Inches(3)
     
-    # Iterate over the image paths and add images to the slide
-    for i, image_path in enumerate(image_paths):
-        if i > 3:
-            break
-        # Add image to the slide
-        picture = shapes.add_picture(image_path, left, top, width, height)
-        # Update positioning for the next image
-        if i == 1:
-            left = Inches(4.5)
-        else:
-            top = Inches(4.5)
-        
-        # Save the PowerPoint presentation
-        presentation.save('image_grid.pptx')
+    left = top = Inches(0.5)
+    pic = slide.shapes.add_picture('graphs.png', left, top)
+    
+    # Saving the presentation
+    presentatio.save('presentation.pptx')
     
     with open("image_grid.pptx", "rb") as file:
         st.download_button(
