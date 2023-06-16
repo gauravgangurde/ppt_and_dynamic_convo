@@ -38,10 +38,10 @@ if st.button("Submit"):
     response2 = pandas_ai(df, prompt=f"Plot {graph2}")
     response3 = pandas_ai(df, prompt=f"Plot {graph3}")
     response4 = pandas_ai(df, prompt=f"Plot {graph4}")
-    st.pyplot(fig[0,0])
-    st.pyplot(fig[1,0])
-    st.pyplot(fig[0,1])
-    st.pyplot(fig[1,1])
+    st.pyplot(x[0,0])
+    st.pyplot(x[1,0])
+    st.pyplot(x[0,1])
+    st.pyplot(x[1,1])
     fig.savefig('graphs.png')
 
 
