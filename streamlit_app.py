@@ -66,7 +66,7 @@ if st.button("Submit"):
     slide = presentation.slides.add_slide(slide_layout)
     shapes = slide.shapes
     left = presentation.slide_width * 0.01
-    top = Ipresentation.slide_width * 0.01
+    top = presentation.slide_width * 0.01
     width = height = presentation.slide_width * 0.2
     
     # Iterate over the image paths and add images to the slide
