@@ -66,7 +66,7 @@ if st.button("Submit"):
     shapes = slide.shapes
     # Define the dimensions of each graph
     width = Inches(4)
-    height = Inches(4)
+    height = Inches(3)
     
     # Add the first graph to the slide
     left = top = Inches(0.5)
