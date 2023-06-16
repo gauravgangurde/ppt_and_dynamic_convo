@@ -40,22 +40,22 @@ with st.form("my_form"):
         fig1, x1= plt.subplots()
         response1 = pandas_ai(df, prompt=f"Plot {graph1}")
         st.pyplot(fig1)
-       # fig1.figsave('graph1.jpg')
+        fig1.figsave('graph1.jpg')
 
-        """fig2, x2= plt.subplots()
+        fig2, x2= plt.subplots()
         response2 = pandas_ai(df, prompt=f"Plot {graph2}")
         st.pyplot(fig2)
-       # fig2.figsave('graph2.jpg')
+        fig2.figsave('graph2.jpg')
 
         fig3, x3= plt.subplots()
         response3 = pandas_ai(df, prompt=f"Plot {graph3}")
         st.pyplot(fig3)
-       # fig3.figsave('graph3.jpg')
+        fig3.figsave('graph3.jpg')
 
         fig4, x4= plt.subplots()
         response4 = pandas_ai(df, prompt=f"Plot {graph4}")
         st.pyplot(fig4)
-      #  fig4.figsave('graph4.jpg')"""
+        fig4.figsave('graph4.jpg')
     
     
 """    
