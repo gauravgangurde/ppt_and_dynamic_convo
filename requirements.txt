@@ -106,3 +106,4 @@ wcwidth
 Werkzeug
 yarl
 zipp
+pptx
