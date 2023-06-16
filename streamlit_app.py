@@ -26,72 +26,68 @@ with st.sidebar:
 st.subheader("Data" )
 st.dataframe(df.head())
 
-with st.form("my_form"):
+graph1 = st.text_input(label ="Graph1")
+graph2 = st.text_input(label ="Graph2")
+graph3 = st.text_input(label ="Graph3")
+graph4 = st.text_input(label ="Graph4")
 
-    graph1 = st.text_input(label ="Graph1")
-    graph2 = st.text_input(label ="Graph2")
-    graph3 = st.text_input(label ="Graph3")
-    graph4 = st.text_input(label ="Graph4")
+if st.button("Submit"):
     
-    # Every form must have a submit button.
-    submitted = st.form_submit_button("Submit")
-    if submitted:
-        
-        fig1, x1= plt.subplots()
-        response1 = pandas_ai(df, prompt=f"Plot {graph1}")
-        st.pyplot(fig1)
-        fig1.savefig('graph1.jpg')
+    fig1, x1= plt.subplots()
+    response1 = pandas_ai(df, prompt=f"Plot {graph1}")
+    st.pyplot(fig1)
+    fig1.savefig('graph1.jpg')
 
-        fig2, x2= plt.subplots()
-        response2 = pandas_ai(df, prompt=f"Plot {graph2}")
-        st.pyplot(fig2)
-        fig2.savefig('graph2.jpg')
+    fig2, x2= plt.subplots()
+    response2 = pandas_ai(df, prompt=f"Plot {graph2}")
+    st.pyplot(fig2)
+    fig2.savefig('graph2.jpg')
 
-        fig3, x3= plt.subplots()
-        response3 = pandas_ai(df, prompt=f"Plot {graph3}")
-        st.pyplot(fig3)
-        fig3.savefig('graph3.jpg')
+    fig3, x3= plt.subplots()
+    response3 = pandas_ai(df, prompt=f"Plot {graph3}")
+    st.pyplot(fig3)
+    fig3.savefig('graph3.jpg')
 
-        fig4, x4= plt.subplots()
-        response4 = pandas_ai(df, prompt=f"Plot {graph4}")
-        st.pyplot(fig4)
-        fig4.savefig('graph4.jpg')
+    fig4, x4= plt.subplots()
+    response4 = pandas_ai(df, prompt=f"Plot {graph4}")
+    st.pyplot(fig4)
+    fig4.savefig('graph4.jpg')
+
+
+
+# Create a new PowerPoint presentation
+presentation = Presentation()
+
+# Define the image file paths
+image_paths = ['graph1.jpg', 'graph2.jpg', 'graph3.jpg', 'graph4.jpg']
+
+# Create a slide with a 2x2 image grid
+slide_layout = presentation.slide_layouts[6]  # Use slide layout with 2 content placeholders
+slide = presentation.slides.add_slide(slide_layout)
+shapes = slide.shapes
+left = Inches(0.5)
+top = Inches(0.5)
+width = height = Inches(3)
+
+# Iterate over the image paths and add images to the slide
+for i, image_path in enumerate(image_paths):
+    if i > 3:
+        break
+    # Add image to the slide
+    picture = shapes.add_picture(image_path, left, top, width, height)
+    # Update positioning for the next image
+    if i == 1:
+        left = Inches(4.5)
+    else:
+        top = Inches(4.5)
     
-    
-   
-    # Create a new PowerPoint presentation
-    presentation = Presentation()
-    
-    # Define the image file paths
-    image_paths = ['graph1.jpg', 'graph2.jpg', 'graph3.jpg', 'graph4.jpg']
-    
-    # Create a slide with a 2x2 image grid
-    slide_layout = presentation.slide_layouts[6]  # Use slide layout with 2 content placeholders
-    slide = presentation.slides.add_slide(slide_layout)
-    shapes = slide.shapes
-    left = Inches(0.5)
-    top = Inches(0.5)
-    width = height = Inches(3)
-    
-    # Iterate over the image paths and add images to the slide
-    for i, image_path in enumerate(image_paths):
-        if i > 3:
-            break
-        # Add image to the slide
-        picture = shapes.add_picture(image_path, left, top, width, height)
-        # Update positioning for the next image
-        if i == 1:
-            left = Inches(4.5)
-        else:
-            top = Inches(4.5)
-        
-        # Save the PowerPoint presentation
-        presentation.save('image_grid.pptx')
-    
-    with open("image_grid.pptx", "rb") as file:
-        st.download_button(
-            label="Download data",
-            data=file,
-            file_name='image_grid.pptx'
-            )
+    # Save the PowerPoint presentation
+    presentation.save('image_grid.pptx')
+
+with open("image_grid.pptx", "rb") as file:
+    st.download_button(
+        label="Download data",
+        data=file,
+        file_name='image_grid.pptx'
+        )
 
