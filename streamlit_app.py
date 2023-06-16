@@ -5,85 +5,92 @@ from pandasai import PandasAI
 from pandasai.llm.openai import OpenAI
 from PIL import Image
 import matplotlib.pyplot as plt
-import os
+from pptx import Presentation
+from pptx.util import Inches
 
 #st.set_option('deprecation.showPyplotGlobalUse', False)
 image = Image.open('exl.png')
 
 
 llm = OpenAI(api_token=st.secrets["chat_gpt_key"])
-
 pandas_ai = PandasAI(llm, conversational=False)#, enforce_privacy = True)
 
 df = pd.read_csv('data.csv')
-if os.path.isfile('prev_response.csv'):
-    df2 = pd.read_csv('prev_response.csv')
-
-ls = ['chart','plot','graph','trend']
-#to check if prompt have chart, graph words
-def contains_substring(string, substrings):
-    for substring in substrings:
-        if substring in string:
-            return True
-    return False
-    
     
 with st.sidebar:
     st.image(image, width = 150)
     st.header('Conversational BI')
     st.write('Ask any question on your BI report')
 
-#st.write('Gaurav')    
-#st.write(os.listdir('/home/appuser'))
-#st.write('Gaurav')
-#st.write(os.listdir('/usr/src'))
-#st.write(os.listdir('/usr/local'))
-#st.write('app')    
-#st.write(os.listdir('/app/project_conversation_bi/'))
 
-
-st.subheader("Raw data" )
+st.subheader("Data" )
 st.dataframe(df.head())
 
 with st.form("my_form"):
 
-    query = st.text_input(label ="Enter a question" , placeholder = 'Enter your query')
+    graph1 = st.text_input(label ="Graph1")
+    graph2 = st.text_input(label ="Graph2")
+    graph3 = st.text_input(label ="Graph3")
+    graph4 = st.text_input(label ="Graph4")
+    
     # Every form must have a submit button.
     submitted = st.form_submit_button("Submit")
     if submitted:
-        if contains_substring(query.lower(),ls): 
-            fig, x = plt.subplots()
-            response = pandas_ai(df, prompt=query)
-            st.pyplot(fig)
-            st.text(response)
-        else:
-            response = pandas_ai(df, prompt=query)
-            if isinstance(response, pd.DataFrame):
-                st.dataframe(response)
-                open('/app/project_conversation_bi/prev_response.csv', 'w').write(response.to_csv(index = False))
+        
+        fig1, x1= plt.subplots()
+        response1 = pandas_ai(df, prompt=f"Plot {graph1}")
+        st.pyplot(fig1)
+        fig1.figsave('graph1.jpg')
+
+        fig2, x2= plt.subplots()
+        response2 = pandas_ai(df, prompt=f"Plot {graph2}")
+        st.pyplot(fig2)
+        fig2.figsave('graph2.jpg')
+
+        fig3, x3= plt.subplots()
+        response3 = pandas_ai(df, prompt=f"Plot {graph3}")
+        st.pyplot(fig3)
+        fig3.figsave('graph3.jpg')
+
+        fig4, x4= plt.subplots()
+        response4 = pandas_ai(df, prompt=f"Plot {graph4}")
+        st.pyplot(fig4)
+        fig4.figsave('graph4.jpg')
+
+
+
+        # Create a new PowerPoint presentation
+        presentation = Presentation()
+        
+        # Define the image file paths
+        image_paths = ['graph1.jpg', 'graph2.jpg', 'graph3.jpg', 'graph4.jpg']
+        
+        # Create a slide with a 2x2 image grid
+        slide_layout = presentation.slide_layouts[6]  # Use slide layout with 2 content placeholders
+        slide = presentation.slides.add_slide(slide_layout)
+        shapes = slide.shapes
+        left = Inches(0.5)
+        top = Inches(0.5)
+        width = height = Inches(3)
+        
+        # Iterate over the image paths and add images to the slide
+        for i, image_path in enumerate(image_paths):
+            if i > 3:
+                break
+            # Add image to the slide
+            picture = shapes.add_picture(image_path, left, top, width, height)
+            # Update positioning for the next image
+            if i == 1:
+                left = Inches(4.5)
             else:
-                st.text(response.to_string(index=False))
+                top = Inches(4.5)
+                
+        # Save the PowerPoint presentation
+        presentation.save('image_grid.pptx')
 
-
-
-if os.path.isfile('prev_response.csv'):
-    df2 = pd.read_csv('prev_response.csv')
-    st.subheader("Data report" )
-    st.dataframe(df2.head())
-    
-    with st.form("my_form_2"):
-    
-        query = st.text_input(label ="Enter a question" , placeholder = 'Enter your query')
-        # Every form must have a submit button.
-        submitted = st.form_submit_button("Submit")
-        if submitted:
-            if contains_substring(query.lower(),ls): 
-                fig, x = plt.subplots()
-                response = pandas_ai(df2, prompt=query)
-                st.pyplot(fig)
-            else:
-                response = pandas_ai(df2, prompt=query)
-                if isinstance(response, str):
-                    st.text(response)
-                else:
-                    st.text(response.to_string(index=False))
+        with open("image_grid.pptx", "rb") as file:
+            st.download_button(
+                label="Download data",
+                data=file,
+                file_name='image_grid.pptx'
+            )
