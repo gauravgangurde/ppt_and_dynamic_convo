@@ -8,7 +8,6 @@ import matplotlib.pyplot as plt
 from pptx import Presentation
 from pptx.util import Inches
 
-#st.set_option('deprecation.showPyplotGlobalUse', False)
 image = Image.open('exl.png')
 
 
@@ -19,8 +18,8 @@ df = pd.read_csv('data.csv')
     
 with st.sidebar:
     st.image(image, width = 150)
-    st.header('Conversational BI')
-    st.write('Ask any question on your BI report')
+    st.header('Graphs')
+    st.write('Create 2*2 graph grid')
 
 
 st.subheader("Data" )
