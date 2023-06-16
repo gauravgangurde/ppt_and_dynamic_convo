@@ -58,7 +58,7 @@ with st.form("my_form"):
         fig4.figsave('graph4.jpg')
     
     
-    
+"""    
     # Create a new PowerPoint presentation
     presentation = Presentation()
     
@@ -94,3 +94,4 @@ with st.form("my_form"):
             data=file,
             file_name='image_grid.pptx'
             )
+"""
