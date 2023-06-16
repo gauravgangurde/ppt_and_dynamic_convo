@@ -55,10 +55,10 @@ with st.form("my_form"):
         fig4, x4= plt.subplots()
         response4 = pandas_ai(df, prompt=f"Plot {graph4}")
         st.pyplot(fig4)
-        fig4.figsave('graph4.jpg')
+        fig4.savefig('graph4.jpg')
     
     
-"""    
+   
     # Create a new PowerPoint presentation
     presentation = Presentation()
     
@@ -94,4 +94,4 @@ with st.form("my_form"):
             data=file,
             file_name='image_grid.pptx'
             )
-"""
+
