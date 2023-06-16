@@ -29,9 +29,9 @@ st.dataframe(df.head())
 with st.form("my_form"):
 
     graph1 = st.text_input(label ="Graph1")
-    """graph2 = st.text_input(label ="Graph2")
+    graph2 = st.text_input(label ="Graph2")
     graph3 = st.text_input(label ="Graph3")
-    graph4 = st.text_input(label ="Graph4")"""
+    graph4 = st.text_input(label ="Graph4")
     
     # Every form must have a submit button.
     submitted = st.form_submit_button("Submit")
