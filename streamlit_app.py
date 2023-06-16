@@ -35,22 +35,22 @@ if st.button("Submit"):
     
     fig1, x1= plt.subplots()
     response1 = pandas_ai(df, prompt=f"Plot {graph1}")
-    st.pyplot(fig1)
+    #st.pyplot(fig1)
     fig1.savefig('graph1.png')
 
     fig2, x2= plt.subplots()
     response2 = pandas_ai(df, prompt=f"Plot {graph2}")
-    st.pyplot(fig2)
+    #st.pyplot(fig2)
     fig2.savefig('graph2.png')
 
     fig3, x3= plt.subplots()
     response3 = pandas_ai(df, prompt=f"Plot {graph3}")
-    st.pyplot(fig3)
+    #st.pyplot(fig3)
     fig3.savefig('graph3.png')
 
     fig4, x4= plt.subplots()
     response4 = pandas_ai(df, prompt=f"Plot {graph4}")
-    st.pyplot(fig4)
+    #st.pyplot(fig4)
     fig4.savefig('graph4.png')
 
 
