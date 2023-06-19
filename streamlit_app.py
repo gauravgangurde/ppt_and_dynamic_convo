@@ -26,7 +26,7 @@ st.subheader("Data" )
 st.dataframe(df.head())
 
 
-col1, col2 = st.columns("Graphs", "Title")
+col1, col2 = st.columns(2)
 slide_header = st.text_input(label ="Header")
 
 with col1:
