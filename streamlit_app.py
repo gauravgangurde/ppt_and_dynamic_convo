@@ -60,38 +60,52 @@ if st.button("Submit"):
     # Define the image file paths
     image_paths = ['graph1.png', 'graph2.png', 'graph3.png', 'graph4.png']
     
-    # Add a slide with a slide header
-    slide_layout = presentation.slide_layouts[0]
+    # Create a slide with a 2x2 image grid
+    slide_layout = presentation.slide_layouts[6]  # Use slide layout with 2 content placeholders
     slide = presentation.slides.add_slide(slide_layout)
-    title = slide.shapes.title
-    title.text = "My Slide Header"
+    shapes = slide.shapes
+    # Define the dimensions of each graph
+    width = Inches(4)
+    height = Inches(3)
+    
+    slide_number = Inches(0.5)
+    slide_width =  Inches(0.5)
+    text_box = slide.shapes.add_textbox(slide_width - Inches(2), slide_number, presentation.slide_width, Inches(0.5)).text_frame
+    text_box.text = "\u00A9 2023 EXL Service, Inc. All rights reserved."
+	
+	font = text_frame.font
+	font.name = 'Calibri Light (Headings)'
+	font.size = Pt(16)
+	font.bold = True
+	
+    # Add the first graph to the slide
+    left = Inches(0.5)
+	top = Inches(1)
+    pic = slide.shapes.add_picture('graph1.png', left, top, width=width, height=height)
+    
+    # Add the second graph to the slide
+    left = Inches(5.5)
+    pic = slide.shapes.add_picture('graph2.png', left, top, width=width, height=height)
 
+    # Add the third graph to the slide
+    left = Inches(0.5)
+    top = Inches(4.5)
+    pic = slide.shapes.add_picture('graph3.png', left, top, width=width, height=height)
+    
+    # Add the fourth graph to the slide
+    left = Inches(5.5)
+    pic = slide.shapes.add_picture('graph4.png', left, top, width=width, height=height)
 
-    grid_width = Inches(6)
-    grid_height = Inches(4)
-    left = top = Inches(1)
-    cell_width = grid_width / 2
-    cell_height = grid_height / 2
-    
-    for i, image_path in enumerate(image_paths):
-        row = i // 2
-        col = i % 2
-        left_offset = left + col * cell_width
-        top_offset = top + row * cell_height
-    
-        slide.shapes.add_picture(image_path, left_offset, top_offset, cell_width, cell_height)
-    
-        # Add titles
-        image_title = slide.shapes.add_textbox(left_offset, top_offset + cell_height, cell_width, Inches(0.5)).text_frame
-        text = image_title.add_paragraph().add_run()
-        text.text = "Image {}".format(i + 1)
-    
     # Add page number and trademark sign
     slide_number = presentation.slide_height - Inches(0.5)
     slide_width = presentation.slide_width - Inches(0.5)
     text_box = slide.shapes.add_textbox(slide_width - Inches(2), slide_number, Inches(2), Inches(0.5)).text_frame
-    text_box.text = "Page Number \u00A9"
-    
+    text_box.text = "\u00A9 2023 EXL Service, Inc. All rights reserved."
+	
+	font = text_frame.font
+	font.name = 'Calibri Light (Headings)'
+	font.size = Pt(8)
+	
     presentation.save('image_grid.pptx')
     
     with open("image_grid.pptx", "rb") as file:
