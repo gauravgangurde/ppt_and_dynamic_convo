@@ -60,31 +60,37 @@ if st.button("Submit"):
     # Define the image file paths
     image_paths = ['graph1.png', 'graph2.png', 'graph3.png', 'graph4.png']
     
-    # Create a slide with a 2x2 image grid
-    slide_layout = presentation.slide_layouts[6]  # Use slide layout with 2 content placeholders
+    # Add a slide with a slide header
+    slide_layout = presentation.slide_layouts[0]
     slide = presentation.slides.add_slide(slide_layout)
-    shapes = slide.shapes
-    # Define the dimensions of each graph
-    width = Inches(4)
-    height = Inches(3)
-    
-    # Add the first graph to the slide
-    left = top = Inches(0.5)
-    pic = slide.shapes.add_picture('graph1.png', left, top, width=width, height=height)
-    
-    # Add the second graph to the slide
-    left = Inches(5.5)
-    pic = slide.shapes.add_picture('graph2.png', left, top, width=width, height=height)
+    title = slide.shapes.title
+    title.text = "My Slide Header"
 
-    # Add the third graph to the slide
-    left = Inches(0.5)
-    top = Inches(4)
-    pic = slide.shapes.add_picture('graph3.png', left, top, width=width, height=height)
+    image_paths = ["image1.jpg", "image2.jpg", "image3.jpg", "image4.jpg"]
+    grid_width = Inches(6)
+    grid_height = Inches(4)
+    left = top = Inches(1)
+    cell_width = grid_width / 2
+    cell_height = grid_height / 2
     
-    # Add the fourth graph to the slide
-    left = Inches(5.5)
-    pic = slide.shapes.add_picture('graph4.png', left, top, width=width, height=height)
-
+    for i, image_path in enumerate(image_paths):
+        row = i // 2
+        col = i % 2
+        left_offset = left + col * cell_width
+        top_offset = top + row * cell_height
+    
+        slide.shapes.add_picture(image_path, left_offset, top_offset, cell_width, cell_height)
+    
+        # Add titles
+        image_title = slide.shapes.add_textbox(left_offset, top_offset + cell_height, cell_width, Inches(0.5)).text_frame
+        text = image_title.add_paragraph().add_run()
+        text.text = "Image {}".format(i + 1)
+    
+    # Add page number and trademark sign
+    slide_number = presentation.slide_height - Inches(0.5)
+    slide_width = presentation.slide_width - Inches(0.5)
+    text_box = slide.shapes.add_textbox(slide_width - Inches(2), slide_number, Inches(2), Inches(0.5)).text_frame
+    text_box.text = "Page Number \u00A9"
     
     presentation.save('image_grid.pptx')
     
