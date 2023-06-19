@@ -111,7 +111,7 @@ if st.button("Submit"):
 	slide_width = presentation.slide_width - Inches(2)
 	text_box = slide.shapes.add_textbox(slide_width - Inches(2.5), slide_number, Inches(2), Inches(0.5)).text_frame
 	text_box.text = "\u00A9 2023 EXL Service, Inc. All rights reserved."
-	pic = slide.shapes.add_picture('exl.png', presentation.slide_width - Inches(2), presentation.slide_height - Inches(0.5), width=Inches(1), height=Inches(0.3))
+	pic = slide.shapes.add_picture('exl.png', presentation.slide_width - Inches(1.5), presentation.slide_height - Inches(0.5), width=Inches(0.8), height=Inches(0.32))
 	
 	font = text_box.paragraphs[0].runs[0].font
 	font.name = 'Calibri Light (Headings)'
