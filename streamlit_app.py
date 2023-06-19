@@ -66,7 +66,7 @@ if st.button("Submit"):
     title = slide.shapes.title
     title.text = "My Slide Header"
 
-    image_paths = ["image1.jpg", "image2.jpg", "image3.jpg", "image4.jpg"]
+
     grid_width = Inches(6)
     grid_height = Inches(4)
     left = top = Inches(1)
