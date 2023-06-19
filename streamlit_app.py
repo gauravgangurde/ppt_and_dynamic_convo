@@ -25,6 +25,7 @@ with st.sidebar:
 st.subheader("Data" )
 st.dataframe(df.head())
 
+slide_header = st.text_input(label ="Header")
 graph1 = st.text_input(label ="Graph1")
 graph2 = st.text_input(label ="Graph2")
 graph3 = st.text_input(label ="Graph3")
@@ -69,9 +70,9 @@ if st.button("Submit"):
 	height = Inches(3)
 	
 	slide_number = Inches(0.5)
-	slide_width =  Inches(0.5)
-	text_box = slide.shapes.add_textbox(slide_width - Inches(2), slide_number, presentation.slide_width, Inches(0.5)).text_frame
-	text_box.text = "\u00A9 2023 EXL Service, Inc. All rights reserved."
+	slide_width =  Inches(0.2)
+	text_box = slide.shapes.add_textbox(Inches(0.5), slide_number, presentation.slide_width, Inches(0.5)).text_frame
+	text_box.text = slide_header
 	
 	font = text_box.paragraphs[0].runs[0].font
 	font.name = 'Calibri Light (Headings)'
@@ -80,7 +81,7 @@ if st.button("Submit"):
 	
 	# Add the first graph to the slide
 	left = Inches(0.5)
-	top = Inches(1)
+	top = Inches(0.8)
 	pic = slide.shapes.add_picture('graph1.png', left, top, width=width, height=height)
 	
 	# Add the second graph to the slide
@@ -89,7 +90,7 @@ if st.button("Submit"):
 	
 	# Add the third graph to the slide
 	left = Inches(0.5)
-	top = Inches(4.5)
+	top = Inches(3.8)
 	pic = slide.shapes.add_picture('graph3.png', left, top, width=width, height=height)
 	
 	# Add the fourth graph to the slide
@@ -97,7 +98,7 @@ if st.button("Submit"):
 	pic = slide.shapes.add_picture('graph4.png', left, top, width=width, height=height)
 	
 	# Add page number and trademark sign
-	slide_number = presentation.slide_height - Inches(0.5)
+	slide_number = presentation.slide_height - Inches(0.1)
 	slide_width = presentation.slide_width - Inches(0.5)
 	text_box = slide.shapes.add_textbox(slide_width - Inches(2), slide_number, Inches(2), Inches(0.5)).text_frame
 	text_box.text = "\u00A9 2023 EXL Service, Inc. All rights reserved."
