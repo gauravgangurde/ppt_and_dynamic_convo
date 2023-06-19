@@ -69,14 +69,12 @@ if st.button("Submit"):
 	width = Inches(4)
 	height = Inches(3)
 	
-	slide_number = Inches(0.5)
-	slide_width =  Inches(0.2)
-	text_box = slide.shapes.add_textbox(Inches(0.5), slide_number, presentation.slide_width, Inches(0.5)).text_frame
+	text_box = slide.shapes.add_textbox(Inches(0.5), Inches(0.2), presentation.slide_width, Inches(0.5)).text_frame
 	text_box.text = slide_header
 	
 	font = text_box.paragraphs[0].runs[0].font
 	font.name = 'Calibri Light (Headings)'
-	font.size = Pt(16)
+	font.size = Pt(24)
 	font.bold = True
 	
 	# Add the first graph to the slide
@@ -99,13 +97,13 @@ if st.button("Submit"):
 	
 	# Add page number and trademark sign
 	slide_number = presentation.slide_height - Inches(0.1)
-	slide_width = presentation.slide_width - Inches(0.5)
+	slide_width = presentation.slide_width - Inches(1)
 	text_box = slide.shapes.add_textbox(slide_width - Inches(2), slide_number, Inches(2), Inches(0.5)).text_frame
 	text_box.text = "\u00A9 2023 EXL Service, Inc. All rights reserved."
 	
 	font = text_box.paragraphs[0].runs[0].font
 	font.name = 'Calibri Light (Headings)'
-	font.size = Pt(8)
+	font.size = Pt(12)
 	
 	presentation.save('image_grid.pptx')
     
