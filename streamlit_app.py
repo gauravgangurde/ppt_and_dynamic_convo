@@ -7,6 +7,7 @@ from PIL import Image
 import matplotlib.pyplot as plt
 from pptx import Presentation
 from pptx.util import Inches, Pt
+from pptx.dml.color import RGBColor
 
 image = Image.open('exl.png')
 
