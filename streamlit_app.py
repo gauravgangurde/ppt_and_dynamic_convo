@@ -25,31 +25,41 @@ with st.sidebar:
 st.subheader("Data" )
 st.dataframe(df.head())
 
+
+col1, col2 = st.columns("Graphs", "Title")
 slide_header = st.text_input(label ="Header")
-graph1 = st.text_input(label ="Graph1")
-graph2 = st.text_input(label ="Graph2")
-graph3 = st.text_input(label ="Graph3")
-graph4 = st.text_input(label ="Graph4")
+
+with col1:
+	graph1 = st.text_input(label ="Graph1")
+	graph2 = st.text_input(label ="Graph2")
+	graph3 = st.text_input(label ="Graph3")
+	graph4 = st.text_input(label ="Graph4")
+
+with col2:
+	title1 = st.text_input(label ="Title1")
+	title2 = st.text_input(label ="Title2")
+	title3 = st.text_input(label ="Title3")
+	title4 = st.text_input(label ="Title4")
 
 if st.button("Submit"):
 	
 	fig1, x1= plt.subplots()
-	response1 = pandas_ai(df, prompt=f"Plot {graph1}")
+	response1 = pandas_ai(df, prompt=f"Plot {graph1} and use {title1} as chart title")
 	#st.pyplot(fig1)
 	fig1.savefig('graph1.png')
 	
 	fig2, x2= plt.subplots()
-	response2 = pandas_ai(df, prompt=f"Plot {graph2}")
+	response2 = pandas_ai(df, prompt=f"Plot {graph2} and use {title2} as chart title")
 	#st.pyplot(fig2)
 	fig2.savefig('graph2.png')
 	
 	fig3, x3= plt.subplots()
-	response3 = pandas_ai(df, prompt=f"Plot {graph3}")
+	response3 = pandas_ai(df, prompt=f"Plot {graph3} and use {title3} as chart title")
 	#st.pyplot(fig3)
 	fig3.savefig('graph3.png')
 	
 	fig4, x4= plt.subplots()
-	response4 = pandas_ai(df, prompt=f"Plot {graph4}")
+	response4 = pandas_ai(df, prompt=f"Plot {graph4} and use {title4} as chart title")
 	#st.pyplot(fig4)
 	fig4.savefig('graph4.png')
 
