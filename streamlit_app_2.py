@@ -38,7 +38,7 @@ with tab1:
   with open("temp.txt", 'r') as f:
     temp_customer = f.read()
     
-  customer = st.text_input(label ="Customer")
+  customer = st.text_area(label ="Customer",height = 100)
   
   with st.form("form"):
     if customer != temp_customer:
@@ -46,7 +46,7 @@ with tab1:
                   {convo} customer- {customer} \n
                   Based on the above conversation, provide what the executive should say next?. Provide in follwing format
                   executive - <response>""")
-      executive = st.text_area("Executive",height = 200, value= response)
+      executive = st.text_area("Executive",height = 150, value= response)
       submitted = st.form_submit_button("Submit")
       if submitted:
         with open("temp.txt","w") as f:
