@@ -34,7 +34,7 @@ if st.button("Reset"):
 with open("convo.txt", 'r') as file:
   convo = file.read()
 with open("temp.txt", 'r') as f:
-  temp_customer = file.read()
+  temp_customer = f.read()
 
 st.markdown(convo)
   
