@@ -72,13 +72,13 @@ with tab3:
                   {convo1}
                   Based on the above conversation, provide what the executive should say next?. Provide in follwing format
                   Claims Executive - <response>""")
-      x = f"""{x}\n\n{''.join(ln[t:i])}\n\n ---------\n{response1}\n---------"""
+      x = f"""{x}\n\n{''.join(ln[t:i])}\n\n <hr><b>\n{response1}\n</b><hr>"""
       #st.markdown(f"""{''.join(ln[t:i])}\n\n---------\n{response1}\n---------\n\n""")
       t = i+1
     with open("compare.txt", 'w') as file:
       file.write(x)
   with open("compare.txt","r") as file:
     res = file.read()
-  st.markdown(res.replace('-','<hr>'), unsafe_allow_html=True)
+  st.markdown(res, unsafe_allow_html=True)
     
     
