@@ -26,50 +26,27 @@ with st.sidebar:
 st.subheader("Data" )
 st.dataframe(df.head())
 
-slide_header = st.text_input(label ="Header")
-col1, col2 = st.columns(2)
-
-with col1:
-	graph1 = st.text_input(label ="Graph1")
-	graph2 = st.text_input(label ="Graph2")
-	graph3 = st.text_input(label ="Graph3")
-	graph4 = st.text_input(label ="Graph4")
-
-with col2:
-	title1 = st.text_input(label ="Title1")
-	title2 = st.text_input(label ="Title2")
-	title3 = st.text_input(label ="Title3")
-	title4 = st.text_input(label ="Title4")
-
-if st.button("Submit"):
+with st.form("Form1"):
+	option = st.selectbox("Select graph", ("Graph1","Graph2","Graph3","Graph4"))
+	graph = st.text_input(label ="Graph")
+	title = st.text_input(label ="Title")
+	submitted1 = st.form_submit_button("Submit")
 	
-	fig1, x1= plt.subplots()
-	response1 = pandas_ai(df, prompt=f"""Plot {graph1} and use '{title1}' as chart title""")
-	#st.pyplot(fig1)
-	fig1.savefig('graph1.png')
 	
-	fig2, x2= plt.subplots()
-	response2 = pandas_ai(df, prompt=f"""Plot {graph2} and use '{title2}' as chart title""")
-	#st.pyplot(fig2)
-	fig2.savefig('graph2.png')
-	
-	fig3, x3= plt.subplots()
-	response3 = pandas_ai(df, prompt=f"""Plot {graph3} and use '{title3}' as chart title""")
-	#st.pyplot(fig3)
-	fig3.savefig('graph3.png')
-	
-	fig4, x4= plt.subplots()
-	response4 = pandas_ai(df, prompt=f"""Plot {graph4} and use '{title4}' as chart title""")
-	#st.pyplot(fig4)
-	fig4.savefig('graph4.png')
+	if submitted1:
+		fig, x= plt.subplots()
+		response = pandas_ai(df, prompt=f"""Plot {graph} and use '{title}' as chart title""")
+		st.pyplot(fig)
+		fig1.savefig(option+'.png')
 
 
-	
+
+	st.write("---")
 	# Create a new PowerPoint presentation
 	presentation = Presentation()
 	
 	# Define the image file paths
-	image_paths = ['graph1.png', 'graph2.png', 'graph3.png', 'graph4.png']
+	image_paths = ['Graph1.png', 'Graph2.png', 'Graph3.png', 'Graph4.png']
 	
 	# Create a slide with a 2x2 image grid
 	slide_layout = presentation.slide_layouts[6]  # Use slide layout with 2 content placeholders
@@ -125,3 +102,4 @@ if st.button("Submit"):
 		    data=file,
 		    file_name='image_grid.pptx'
 		    )
+	st.write("---")
