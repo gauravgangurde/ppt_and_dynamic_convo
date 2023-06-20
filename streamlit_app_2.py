@@ -80,7 +80,7 @@ with tab3:
     res = file.read()
   st.markdown(res, unsafe_allow_html=True)
     
-with open("compare.txt", "rb") as file:
+"""with open("compare.txt", "rb") as file:
 	st.download_button(
 		label="Download data1",
 		data=file,
@@ -98,5 +98,5 @@ with open("temp.txt", "rb") as file:
 		label="Download data2",
 		data=file,
 		file_name='temp.txt'
-		)
+		)"""
 
