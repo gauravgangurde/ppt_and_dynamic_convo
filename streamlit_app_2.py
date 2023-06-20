@@ -79,6 +79,6 @@ with tab3:
       file.write(x)
   with open("compare.txt","r") as file:
     res = file.read()
-  st.markdown(res.replace('-','\_'))
+  st.markdown(res.replace('-','<hr>'), unsafe_allow_html=True)
     
     
