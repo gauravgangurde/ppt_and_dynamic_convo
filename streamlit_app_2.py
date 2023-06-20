@@ -28,7 +28,7 @@ if st.button("Reset"):
   with open('convo.txt', 'w') as file:
     file.write("Executive - Hello, How can I help you?\n")
   with open("temp.txt", 'w') as f:
-    f.write()
+    pass#f.write()
 
     
 with open("convo.txt", 'r') as file:
