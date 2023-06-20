@@ -43,7 +43,7 @@ with st.form("Form1"):
 
 		st.write("---")
 		st.subheader("Download")
-		slide_header = st.text_input(label ="Header")
+		slide_header = st.text_input(label ="Header", "Charts")
 		# Create a new PowerPoint presentation
 		presentation = Presentation()
 		
