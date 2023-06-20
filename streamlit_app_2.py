@@ -66,7 +66,7 @@ with tab3:
   if st.button("Compare"):
     x = ''
     t = 0
-    for i in range(4,len(ln),5):
+    for i in range(4,len(ln),4):
       convo1 = ''.join(ln[:i])
       response1 = openai_response(f"""Conversation Between AIG executive and customer
                   {convo1}
