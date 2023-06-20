@@ -40,9 +40,8 @@ with tab1:
     
   customer = st.text_area(label ="Customer",height = 100)
 
-  if customer != temp_customer:
-    with st.form("form"):
-    #if customer != temp_customer:
+  with st.form("form"):
+    if customer != temp_customer:
       response = openai_response(f"""Conversation Between AIG executive and customer
                   {convo} customer- {customer} \n
                   Based on the above conversation, provide what the executive should say next?. Provide in follwing format
