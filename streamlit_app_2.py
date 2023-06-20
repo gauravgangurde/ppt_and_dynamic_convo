@@ -61,7 +61,7 @@ with tab2:
   st.markdown(convo_new)
 
 with tab3:
-  """with open('claims.txt', 'r') as file:
+  with open('claims.txt', 'r') as file:
     ln = file.readlines()
   if st.button("Compare"):
     x = ''
@@ -76,7 +76,7 @@ with tab3:
       #st.markdown(f"""{''.join(ln[t:i])}\n\n---------\n{response1}\n---------\n\n""")
       t = i+1
     with open("compare.txt", 'w') as file:
-      file.write(x)"""
+      file.write(x)
   with open("compare.txt","r") as file:
     res = file.read()
   st.markdown(res.replace('-','\_'))
