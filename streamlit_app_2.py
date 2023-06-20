@@ -50,6 +50,6 @@ if customer != temp_customer:
     with open('convo.txt', 'w') as file:
       file.write(f""" \n\n {executive}\n\ncustomer - {customer}\n\n{convo}""")
 
-  st.markdown(convo)
+    st.markdown(convo)
     
   
