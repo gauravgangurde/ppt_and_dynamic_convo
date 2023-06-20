@@ -63,12 +63,17 @@ with tab2:
 with tab3:
   with open('claims.txt', 'r') as file:
     ln = file.readlines()
-
-  for i in range(4,len(ln),5):
-    convo1 = ''.join(ln[:i])
-    response1 = openai_response(f"""Conversation Between AIG executive and customer
-                {convo1}
-                Based on the above conversation, provide what the executive should say next?. Provide in follwing format
-                executive - <response>""")
-    st.markdown(response1)
-  
+  if st.button("Compare"):
+    x = ''
+    t = 0
+    for i in range(4,len(ln),5):
+      convo1 = ''.join(ln[:i])
+      response1 = openai_response(f"""Conversation Between AIG executive and customer
+                  {convo1}
+                  Based on the above conversation, provide what the executive should say next?. Provide in follwing format
+                  executive - <response>""")
+      x = f"""{''.join(ln[t:i]}\n\n ---------\n{response1}\n---------"""
+      t = i+1
+    st.markdown(x)
+    
+    
