@@ -42,6 +42,7 @@ with st.form("Form1"):
 
 
 	st.write("---")
+	slide_header = st.text_input(label ="Header")
 	# Create a new PowerPoint presentation
 	presentation = Presentation()
 	
