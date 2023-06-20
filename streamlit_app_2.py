@@ -35,7 +35,7 @@ st.markdown(convo)
   
 customer = st.text_input(label ="Customer")
 
-if lcustomer != customer_temp:
+if customer != customer_temp:
   response = openai_response(f"""Conversation Between AIG executive and customer
               {convo} customer- {customer} \n
               Based on the above conversation, provide what the executive should say next?. Provide in follwing format
