@@ -71,7 +71,7 @@ with tab3:
       response1 = openai_response(f"""Conversation Between AIG executive and customer
                   {convo1}
                   Based on the above conversation, provide what the executive should say next?. Provide in follwing format
-                  executive - <response>""")
+                  Claims Executive - <response>""")
       #x = f"""{x}\n\n{''.join(ln[t:i])}\n\n ---------\n{response1}\n---------"""
       st.markdown(f"""{''.join(ln[t:i])}\n\n ~~~~~~~~~~\n{response1}\n~~~~~~~~~~\n\n""")
       t = i+1
