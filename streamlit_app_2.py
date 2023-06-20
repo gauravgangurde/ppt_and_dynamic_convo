@@ -23,37 +23,41 @@ with st.sidebar:
   st.header('Dynamic Scripting')
 
 
+tab1, tab2 = st.tabs("Generate", "Convo")
 
-if st.button("Reset"):
-  with open('convo.txt', 'w') as file:
-    file.write("Executive - Hello, How can I help you?\n")
-  with open("temp.txt", 'w') as f:
-    pass#f.write()
-
+with tab1:
+  if st.button("Reset"):
+    with open('convo.txt', 'w') as file:
+      file.write("Executive - Hello, How can I help you?\n")
+    with open("temp.txt", 'w') as f:
+      pass#f.write()
+  
+      
+  with open("convo.txt", 'r') as file:
+    convo = file.read()
+  with open("temp.txt", 'r') as f:
+    temp_customer = f.read()
     
-with open("convo.txt", 'r') as file:
-  convo = file.read()
-with open("temp.txt", 'r') as f:
-  temp_customer = f.read()
+  customer = st.text_input(label ="Customer")
   
-customer = st.text_input(label ="Customer")
+  with st.form("form"):
+    if customer != temp_customer:
+      response = openai_response(f"""Conversation Between AIG executive and customer
+                  {convo} customer- {customer} \n
+                  Based on the above conversation, provide what the executive should say next?. Provide in follwing format
+                  executive - <response>""")
+      executive = st.text_area("Executive",height = 200, value= response)
+      submitted = st.form_submit_button("Submit")
+      if submitted:
+        with open("temp.txt","w") as f:
+          f.write(customer)
 
-with st.form("form"):
-  if customer != temp_customer:
-    response = openai_response(f"""Conversation Between AIG executive and customer
-                {convo} customer- {customer} \n
-                Based on the above conversation, provide what the executive should say next?. Provide in follwing format
-                executive - <response>""")
-    executive = st.text_area("Executive",value= response)
-    submitted = st.form_submit_button("Submit")
-    if submitted:
-      with open("temp.txt","w") as f:
-        f.write(customer)
+        with open('convo.txt', 'w') as file:
+          file.write( f"""{convo}\n\nCustomer - {customer}\n\n{executive}""")
+
+with tab2:
+  with open("convo.txt", 'r') as file:
+    convo_new = file.read()
+  st.markdown(convo_new)
   
-      convo_new = f""" \n\n {executive}\n\ncustomer - {customer}\n\n{convo}"""
-      with open('convo.txt', 'w') as file:
-        file.write(convo_new)
-  
-      st.markdown(convo_new)
-    
   
