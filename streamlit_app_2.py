@@ -28,15 +28,13 @@ if st.button("Reset"):
   with open('convo.txt', 'w') as file:
     file.write("Executive - Hello, How can I help you?\n")
   with open("temp.txt", 'w') as f:
-    f.write('customer')
+    f.write()
 
     
 with open("convo.txt", 'r') as file:
   convo = file.read()
 with open("temp.txt", 'r') as f:
   temp_customer = f.read()
-
-st.markdown(convo)
   
 customer = st.text_input(label ="Customer")
 
@@ -50,6 +48,8 @@ if customer != temp_customer:
     with open("temp.txt","w") as f:
       f.write(customer)
     with open('convo.txt', 'w') as file:
-      file.write(f"""{convo} \n\ncustomer - {customer}\n\n {executive}\n""")
+      file.write(f""" \n\n {executive}\n\ncustomer - {customer}\n\n{convo}""")
+
+  st.markdown(convo)
     
   
