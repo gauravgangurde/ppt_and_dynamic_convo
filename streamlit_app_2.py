@@ -23,7 +23,7 @@ with st.sidebar:
   st.header('Dynamic Scripting')
 
 
-tab1, tab2 = st.tabs("Generate", "Convo")
+tab1, tab2 = st.tabs(["Generate", "Convo"])
 
 with tab1:
   if st.button("Reset"):
