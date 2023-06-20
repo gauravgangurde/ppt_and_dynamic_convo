@@ -23,7 +23,7 @@ with st.sidebar:
   st.header('Dynamic Scripting')
 
 
-tab1, tab2 = st.tabs(["Generate", "Convo"])
+tab1, tab2, tab3 = st.tabs(["Generate", "Convo", "Comparison"])
 
 with tab1:
   if st.button("Reset"):
@@ -59,5 +59,16 @@ with tab2:
   with open("convo.txt", 'r') as file:
     convo_new = file.read()
   st.markdown(convo_new)
-  
+
+with tab3:
+  with open('claims.txt', 'r') as file:
+    ln = file.readlines()
+
+  for i in range(4,len(ln),5):
+    convo1 = ''.join(ln[:i])
+    response1 = openai_response(f"""Conversation Between AIG executive and customer
+                {convo1}
+                Based on the above conversation, provide what the executive should say next?. Provide in follwing format
+                executive - <response>""")
+    st.markdown(response1)
   
