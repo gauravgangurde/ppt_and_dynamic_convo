@@ -1,0 +1,61 @@
+Claims Executive: Good morning! This is John, a claims executive at Bright Insurance. How may I assist you today?
+
+Customer: Hi John, this is Sarah. I was involved in a vehicle accident yesterday, and I need to raise an insurance claim.
+
+Claims Executive: I'm sorry to hear about the accident, Sarah. I hope you're doing alright. Could you please 
+provide me with some details about the incident? 
+
+Customer: Yes, of course. Yesterday afternoon, I was driving on Main Street when another car suddenly collided 
+with mine from the side. The other driver was at fault, and I have their insurance details. There was significant damage to my vehicle.
+
+Claims Executive: Thank you for sharing the initial information, Sarah. I'm glad you're safe. Let's begin the 
+claims process. Firstly, I'll need your policy number and some personal details to verify your identity. Could you please provide those?
+
+Customer: Sure, my policy number is 123456789. My full name is Sarah Johnson, and my date of birth is January 15, 1985.
+
+Claims Executive: Thank you, Sarah. Now, let's focus on the accident details. Can you describe the sequence 
+of events leading up to the collision and any notable observations you made at the scene?
+
+Customer: Certainly. I was driving within the speed limit, and suddenly I saw the other car approaching 
+from the side without yielding. I tried to brake and avoid the collision, but we still ended up colliding. I remember 
+there were witnesses at the scene, and I managed to take some photos of the accident and the damage caused.
+
+Claims Executive: That's important information, Sarah. Witness testimonies and photos can be helpful 
+during the claims process. Please provide me with the names and contact details of any witnesses you spoke with, and if possible, 
+share the photos with us so that we can include them in your claim file.
+
+Customer: I spoke with two witnesses, Jennifer and Mark. They were kind enough to provide their contact details. 
+As for the photos, I can email them to you right away.
+
+Claims Executive: Excellent, Sarah! It's great that you were proactive in gathering witness information 
+and capturing photos. Please do email the photos to claims@brightinsurance.com, and we'll add them to your claim file. 
+Now, I'll initiate the claims assessment process based on the information you've provided. 
+
+Customer: Okay, John. What are the next steps in the claims process? How long does it usually take to resolve a claim like this?
+
+Claims Executive: Once we receive your email with the photos, our claims team will review
+ the evidence and assess the extent of the damage. We may need to schedule a vehicle inspection to determine
+ the repair costs. The timeframe for resolving a claim varies depending on the complexity of the case, but we strive to process 
+ it as efficiently as possible. You can expect regular updates from our team regarding the progress of your claim.
+
+Customer: That sounds reasonable, John. I appreciate your assistance. Will I need to pay any deductibles for the repairs?
+
+Claims Executive: Yes, Sarah. Based on your policy, there may be a deductible amount that you're responsible 
+for. Our claims team will review your policy coverage and inform you about the deductible and any applicable terms and conditions.
+
+Customer: Understood, John. I'll be on the lookout for updates and the next steps from your team. Is there 
+anything else I need to know at this stage?
+
+Claims Executive: Just a couple more things, Sarah. Firstly, make sure to keep any receipts or invoices for expenses 
+related to the accident, such as towing charges or rental car costs. These may be reimbursable depending on your policy coverage.
+ Secondly, if you have any questions or concerns during the claims process, don't hesitate to reach out to me or our claims team.
+
+Customer: I'll definitely keep that in mind, John. Thank you for your time and guidance. I'll send the email with 
+the photos right away and await further instructions.
+
+Claims Executive: You're welcome, Sarah. It was my pleasure assisting you. We'll be in touch regarding the progress of your 
+claim. Take care, and I hope everything gets resolved smoothly for you.
+
+Customer: Thank you, John. Have a great day!
+
+Claims Executive: You too, Sarah. Goodbye!
