@@ -38,7 +38,7 @@ with tab1:
   with open("temp.txt", 'r') as f:
     temp_customer = f.read()
     
-  customer = st.text_area(label ="Customer",height = 100)
+  customer = st.text_input(label ="Customer",height = 100)
 
   with st.form("form"):
     if customer != temp_customer:
