@@ -38,20 +38,22 @@ with open("temp.txt", 'r') as f:
   
 customer = st.text_input(label ="Customer")
 
-if customer != temp_customer:
-  response = openai_response(f"""Conversation Between AIG executive and customer
-              {convo} customer- {customer} \n
-              Based on the above conversation, provide what the executive should say next?. Provide in follwing format
-              executive - <response>""")
-  executive = st.text_area("Executive",value= response)
-  if st.button("Submit"):
-    with open("temp.txt","w") as f:
-      f.write(customer)
-
-    convo_new = f""" \n\n {executive}\n\ncustomer - {customer}\n\n{convo}"""
-    with open('convo.txt', 'w') as file:
-      file.write(convo_new)
-
-    st.markdown(convo_new)
+with st.form("form"):
+  if customer != temp_customer:
+    response = openai_response(f"""Conversation Between AIG executive and customer
+                {convo} customer- {customer} \n
+                Based on the above conversation, provide what the executive should say next?. Provide in follwing format
+                executive - <response>""")
+    executive = st.text_area("Executive",value= response)
+    submitted = st.form_submit_button("Submit")
+    if submitted:
+      with open("temp.txt","w") as f:
+        f.write(customer)
+  
+      convo_new = f""" \n\n {executive}\n\ncustomer - {customer}\n\n{convo}"""
+      with open('convo.txt', 'w') as file:
+        file.write(convo_new)
+  
+      st.markdown(convo_new)
     
   
