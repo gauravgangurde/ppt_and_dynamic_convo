@@ -72,7 +72,7 @@ with tab3:
                   {convo1}
                   Based on the above conversation, provide what the executive should say next?. Provide in follwing format
                   executive - <response>""")
-      x = f"""{''.join(ln[t:i]}\n\n ---------\n{response1}\n---------"""
+      x = f"""{''.join(ln[t:i])}\n\n ---------\n{response1}\n---------"""
       t = i+1
     st.markdown(x)
     
