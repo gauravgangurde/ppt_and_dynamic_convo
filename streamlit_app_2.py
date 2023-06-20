@@ -80,23 +80,23 @@ with tab3:
     res = file.read()
   st.markdown(res, unsafe_allow_html=True)
     
- with open("compare.txt", "rb") as file:
+with open("compare.txt", "rb") as file:
 	st.download_button(
-	    label="Download data1",
-	    data=file,
-	    file_name='compare.txt'
-	    )
+		label="Download data1",
+		data=file,
+		file_name='compare.txt'
+		)
 with open("convo.txt", "rb") as file:
 	st.download_button(
-	    label="Download data2",
-	    data=file,
-	    file_name='convo.txt'
-	    )
+		label="Download data2",
+		data=file,
+		file_name='convo.txt'
+		)
 
 with open("temp.txt", "rb") as file:
 	st.download_button(
-	    label="Download data2",
-	    data=file,
-	    file_name='temp.txt'
-	    )
+		label="Download data2",
+		data=file,
+		file_name='temp.txt'
+		)
 
