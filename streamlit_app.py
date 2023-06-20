@@ -25,7 +25,8 @@ with st.sidebar:
 
 st.subheader("Data" )
 st.dataframe(df.head())
-
+st.write("---")
+st.subheader("Generate graphs" )
 with st.form("Form1"):
 	option = st.selectbox("Select graph", ("Graph1","Graph2","Graph3","Graph4"))
 	graph = st.text_input(label ="Graph")
@@ -42,7 +43,7 @@ with st.form("Form1"):
 
 
 st.write("---")
-st.subheader("Download")
+st.subheader("Download slide")
 slide_header = st.text_input(label ="Header", value = "Charts")
 # Create a new PowerPoint presentation
 presentation = Presentation()
@@ -104,4 +105,6 @@ with open("image_grid.pptx", "rb") as file:
 	    data=file,
 	    file_name='image_grid.pptx'
 	    )
+	
+st.write("---")
 
