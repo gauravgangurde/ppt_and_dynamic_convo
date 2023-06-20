@@ -71,7 +71,7 @@ with tab3:
       response1 = openai_response(f"""Conversation Between AIG executive and customer
                   {convo1}
                   Based on the above conversation, provide what the executive should say next?. Provide in follwing format
-                  Claims Executive - <response>""")
+                  Executive - <response>""")
       x = f"""{x}\n{''.join(ln[t:i])}\n <hr><b>{response1}</b><hr>"""
       t = i+1
     with open("compare.txt", 'w') as file:
