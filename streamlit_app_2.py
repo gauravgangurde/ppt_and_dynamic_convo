@@ -47,9 +47,11 @@ if customer != temp_customer:
   if st.button("Submit"):
     with open("temp.txt","w") as f:
       f.write(customer)
-    with open('convo.txt', 'w') as file:
-      file.write(f""" \n\n {executive}\n\ncustomer - {customer}\n\n{convo}""")
 
-    st.markdown(convo)
+    convo_new = f""" \n\n {executive}\n\ncustomer - {customer}\n\n{convo}"""
+    with open('convo.txt', 'w') as file:
+      file.write(convo_new)
+
+    st.markdown(convo_new)
     
   
