@@ -35,14 +35,15 @@ st.markdown(convo)
   
 customer = st.text_input(label ="Customer")
 
-if len(customer)>0:
+if lcustomer != customer_temp:
   response = openai_response(f"""Conversation Between AIG executive and customer
               {convo} customer- {customer} \n
               Based on the above conversation, provide what the executive should say next?. Provide in follwing format
               executive - <response>""")
   executive = st.text_area("Executive",value= response)
   if st.button("Submit"):
+    customer_temp = customer
     with open('convo.txt', 'w') as file:
-      file.write(f"""{convo} customer - {customer}\n {executive}\n""")
+      file.write(f"""{convo} \n\ncustomer - {customer}\n\n {executive}\n""")
     
   
