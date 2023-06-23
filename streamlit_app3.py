@@ -7,7 +7,7 @@ openai.api_key = st.secrets["chat_gpt_key"]
 
 def openai_response(query):
   response = openai.ChatCompletion.create(
-    model="gpt-4",
+    model="gpt-4-0314",
     messages = [
     {"role":"system", "content":"You are helpful assistant."},
     {"role":"user","content": query}
