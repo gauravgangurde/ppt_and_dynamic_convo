@@ -26,7 +26,7 @@ with st.form("form"):
   submitted = st.form_submit_button("Submit")
   
   if submitted:
-    response = openai_response(f"""Please analyse graph at this URL: {url} and {query})
+    response = openai_response(f"""Please analyse graph at this URL: {url} and {query}""")
     st.image(url)
     st.markdown(response)
 
