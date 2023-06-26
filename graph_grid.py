@@ -71,20 +71,20 @@ font.color.rgb = RGBColor(251, 77, 10)
 # Add the first graph to the slide
 left = Inches(0.5)
 top = Inches(0.8)
-pic = slide.shapes.add_picture('graph1.png', left, top, width=width, height=height)
+pic = slide.shapes.add_picture('Graph1.png', left, top, width=width, height=height)
 
 # Add the second graph to the slide
 left = Inches(5.5)
-pic = slide.shapes.add_picture('graph2.png', left, top, width=width, height=height)
+pic = slide.shapes.add_picture('Graph2.png', left, top, width=width, height=height)
 
 # Add the third graph to the slide
 left = Inches(0.5)
 top = Inches(3.8)
-pic = slide.shapes.add_picture('graph3.png', left, top, width=width, height=height)
+pic = slide.shapes.add_picture('Graph3.png', left, top, width=width, height=height)
 
 # Add the fourth graph to the slide
 left = Inches(5.5)
-pic = slide.shapes.add_picture('graph4.png', left, top, width=width, height=height)
+pic = slide.shapes.add_picture('Graph4.png', left, top, width=width, height=height)
 
 # Add page number and trademark sign
 slide_number = presentation.slide_height - Inches(0.5)
